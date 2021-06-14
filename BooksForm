@@ -1,0 +1,156 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JComboBox;
+public class BooksForm extends JFrame {
+static BooksForm frame;
+private JPanel contentPane;
+private JTextField textField_1;
+/**
+* Launch the application.
+*/
+public static void main(String[] args) {
+EventQueue.invokeLater(new Runnable() {
+public void run() {
+try {
+frame = new BooksForm();
+frame.setVisible(true);
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+});
+}
+/**
+* Create the frame.
+*/
+public BooksForm() {
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+setBounds(100, 100, 450, 404);
+contentPane = new JPanel();
+contentPane.setBackground(Color.LIGHT_GRAY);
+contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+setContentPane(contentPane);
+JLabel lblAddBooks = new JLabel("SEARCH BOOKS");
+lblAddBooks.setForeground(Color.BLACK);
+lblAddBooks.setFont(new Font("Tahoma", Font.PLAIN, 18));
+JLabel lblCallNo = new JLabel(" SEARCH FROM");
+JLabel lblName = new JLabel("SEARCH");
+textField_1 = new JTextField();
+textField_1.setColumns(10);
+JButton btnBack = new JButton("Back");
+JComboBox comboBox = new JComboBox();
+comboBox.addItem("Book Name");
+comboBox.addItem("Author Name");
+comboBox.addItem("ID");
+JLabel lblNewLabel = new JLabel("DETAILS");
+JButton btnNewButton = new JButton("Search details");
+{
+Issue i= new Issue();
+i.setVisible(true);
+}
+JComboBox comboBox_1 = new JComboBox();
+comboBox_1.addItem("Author Name");
+comboBox_1.addItem("Quantity");
+comboBox_1.addItem("Field");
+JButton btnMyProfile = new JButton("MY PROFILE");
+btnMyProfile.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent e) {
+myprofile m= new myprofile();
+m.setVisible(true);
+}
+});
+GroupLayout gl_contentPane = new GroupLayout(contentPane);
+gl_contentPane.setHorizontalGroup(
+gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGap(150)
+.addComponent(lblAddBooks))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGap(18)
+.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addComponent(lblCallNo)
+.addComponent(lblName, GroupLayout.PREFERRED_SIZE, 58,
+GroupLayout.PREFERRED_SIZE)
+.addComponent(lblNewLabel))
+.addGap(54)
+.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+.addComponent(comboBox, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+.addComponent(textField_1, GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
+.addComponent(comboBox_1, GroupLayout.PREFERRED_SIZE, 169,
+GroupLayout.PREFERRED_SIZE)))
+.addComponent(btnMyProfile))))
+.addContainerGap(92, Short.MAX_VALUE))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addContainerGap(351, Short.MAX_VALUE)
+.addComponent(btnBack)
+.addContainerGap())
+.addGroup(Alignment.TRAILING,
+gl_contentPane.createSequentialGroup()
+.addContainerGap(174, Short.MAX_VALUE)
+.addComponent(btnNewButton)
+.addGap(135))
+);
+gl_contentPane.setVerticalGroup(
+gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addComponent(lblAddBooks)
+.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGap(18)
+.addComponent(lblCallNo))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addPreferredGap(ComponentPlacement.RELATED)
+.addComponent(comboBox,
+GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+GroupLayout.PREFERRED_SIZE)))
+.addGap(18)
+.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+.addComponent(lblName)
+.addComponent(textField_1,
+GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+GroupLayout.PREFERRED_SIZE))
+.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGap(18)
+.addComponent(lblNewLabel,
+GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGap(29)
+.addComponent(comboBox_1,
+GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+GroupLayout.PREFERRED_SIZE)))
+.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGap(144)
+.addComponent(btnBack)
+.addContainerGap(31,
+Short.MAX_VALUE))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGap(79)
+.addComponent(btnNewButton)
+.addGap(29)
+.addComponent(btnMyProfile)
+.addGap(42))))
+);
+contentPane.setLayout(gl_contentPane);
+}
+}

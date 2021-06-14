@@ -1,0 +1,194 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JComboBox;
+import javax.swing.JCheckBox;
+import javax.swing.JTable;
+public class Issue extends JFrame {
+static Issue frame;
+private JPanel contentPane;
+private JTable table;
+private JTable table_1;
+private JTable table_2;
+private JLabel lblAuthorname;
+private JTable table_3;
+private JTable table_4;
+private JLabel lblQuantity;
+private JTable table_5;
+private JCheckBox chckbxNewCheckBox;
+private JLabel lblNewLabel;
+private JLabel lblTotal;
+private JTextField textField;
+private JButton btnNewButton;
+private JButton btnLogout;
+/**
+* Launch the application.
+*/
+public static void main(String[] args) {
+EventQueue.invokeLater(new Runnable() {
+public void run() {
+try {
+frame = new Issue();
+frame.setVisible(true);
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+});
+}
+/**
+* Create the frame.
+*/
+public Issue() {
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+setBounds(100, 100, 450, 404);
+contentPane = new JPanel();
+contentPane.setBackground(Color.LIGHT_GRAY);
+contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+setContentPane(contentPane);
+table = new JTable();
+table_1 = new JTable();
+table_2 = new JTable();
+JLabel lblBookname = new JLabel("BOOKNAME");
+lblAuthorname = new JLabel("AUTHORNAME");
+table_3 = new JTable();
+table_4 = new JTable();
+lblQuantity = new JLabel("QUANTITY");
+table_5 = new JTable();
+chckbxNewCheckBox = new JCheckBox("");
+lblNewLabel = new JLabel("SELECT BOOK");
+lblTotal = new JLabel("TOTAL");
+textField = new JTextField();
+textField.setColumns(10);
+btnNewButton = new JButton("ISSUE");
+btnLogout = new JButton("LOGOUT");
+btnLogout.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent e) {
+JOptionPane.showMessageDialog(Issue.this, "LOGGED
+OUT","Login Error!", JOptionPane.ERROR_MESSAGE);
+}
+});
+GroupLayout gl_contentPane = new GroupLayout(contentPane);
+gl_contentPane.setHorizontalGroup(
+gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGap(140)
+.addComponent(table,
+GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addComponent(lblBookname)
+.addGap(28))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addComponent(table_1,
+GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+.addPreferredGap(ComponentPlacement.RELATED)))
+.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addComponent(lblAuthorname)
+.addGap(28))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addComponent(table_3,
+GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+.addPreferredGap(ComponentPlacement.RELATED)))
+.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGap(10)
+.addComponent(table_4,
+GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addComponent(lblQuantity)
+.addPreferredGap(ComponentPlacement.RELATED)
+.addComponent(table_2, GroupLayout.PREFERRED_SIZE, 26,
+GroupLayout.PREFERRED_SIZE))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addComponent(table_5, GroupLayout.PREFERRED_SIZE, 72,
+GroupLayout.PREFERRED_SIZE)
+.addGap(18)
+.addComponent(chckbxNewCheckBox)))))
+.addContainerGap())
+.addGroup(gl_contentPane.createSequentialGroup()
+.addContainerGap(170, Short.MAX_VALUE)
+.addComponent(lblNewLabel)
+.addGap(182))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addContainerGap()
+.addComponent(lblTotal)
+.addGap(58)
+.addComponent(textField,
+GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+GroupLayout.PREFERRED_SIZE)
+.addGap(40)
+.addComponent(btnNewButton)
+.addPreferredGap(ComponentPlacement.RELATED)
+.addComponent(btnLogout)
+.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+);
+gl_contentPane.setVerticalGroup(
+gl_contentPane.createParallelGroup(Alignment.LEADING)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addComponent(lblNewLabel)
+.addPreferredGap(ComponentPlacement.RELATED)
+.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELIN
+E)
+.addGroup(gl_contentPane.createSequentialGroup()
+.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELIN
+E)
+.addComponent(table_2,
+GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+GroupLayout.PREFERRED_SIZE)
+.addComponent(lblQuantity))
+.addPreferredGap(ComponentPlacement.RELATED,
+GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILIN
+G)
+.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELIN
+E)
+.addComponent(table_4, GroupLayout.PREFERRED_SIZE,
+GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+.addComponent(table_3, GroupLayout.PREFERRED_SIZE, 32,
+GroupLayout.PREFERRED_SIZE)
+.addComponent(table_5, GroupLayout.PREFERRED_SIZE, 32,
+GroupLayout.PREFERRED_SIZE))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addComponent(chckbxNewCheckBox)
+.addGap(2))))
+.addGroup(gl_contentPane.createSequentialGroup()
+.addComponent(lblBookname)
+.addPreferredGap(ComponentPlacement.RELATED)
+.addComponent(table_1,
+GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
+.addComponent(lblAuthorname))
+.addGap(240)
+.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELIN
+E)
+.addComponent(textField,
+GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+GroupLayout.PREFERRED_SIZE)
+.addComponent(btnNewButton)
+.addComponent(btnLogout)
+.addComponent(lblTotal))
+.addGap(65)
+.addComponent(table,
+GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)
+.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+);
+contentPane.setLayout(gl_contentPane);
+}
+}
